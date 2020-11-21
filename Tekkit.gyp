@@ -228,4 +228,3 @@ def machine():
     print(len(num)-1,"overclockers each")
 
 machine()
-solar.solar_VI(1)
