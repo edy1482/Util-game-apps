@@ -1,3 +1,9 @@
+class item():
+
+    def __init__(self, name, num=0):
+        self.name = name
+        self.num = num
+
 def mirror(x):
     glass = 3*x
     sn_fe_al = x
