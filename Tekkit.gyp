@@ -212,8 +212,8 @@ def machine():
 
     energy_input = 512
     num = []
-    m_c_e_mach = 4
-    e_f_mach = 2
+    m_c_e_mach = 3
+    e_f_mach = 1
 
     for i in m_c_e and e_f:
         x = m_c_e[i]
