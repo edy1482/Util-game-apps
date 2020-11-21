@@ -1,6 +1,6 @@
 class solar():
 
-    def mirror(x):
+    def mirror(self, x):
         glass = 3*x
         sn_fe_al = x
         glass = 0.5*glass
@@ -9,7 +9,7 @@ class solar():
         print("For",x,"mirrors")
         print("")
 
-    def piston(x):
+    def piston(self,x):
         cobble = 4*x
         planks = 3*x
         iron = x
@@ -18,57 +18,57 @@ class solar():
         print("For",x,"pistons")
         print("")
     
-    def quartz_block(x):
+    def quartz_block(self,x):
         nether_quartz = 4*x
         print("You need",nether_quartz,"nether quartz")
         print("For",x,"quartz blocks")
         print("")
 
-    def copper_block(x):
+    def copper_block(self,x):
         copper = 9*x
         print("You need",copper,"copper ingots") 
         print("For",x,"copper blocks")
         print("")
 
-    def glowstone_block(x):
+    def glowstone_block(self,x):
         glowstone = 4*x
         print("You need",glowstone,"glowstone")
         print("For",x,"glowstone blocks")
         print("")
     
-    def iron_block(x):
+    def iron_block(self,x):
         iron = 9*x
         print("You need",iron,"iron ingots")
         print("For",x,"iron blocks")
         print("")
 
-    def gold_block(x):
+    def gold_block(self,x):
         gold = 9*x
         print("You need",gold,"gold ingots")
         print("For",x,"gold blocks")
         print("")
 
-    def diamond_block(x):
+    def diamond_block(self,x):
         diamond = 9*x
         print("You need",diamond,"diamons")
         print("For",x,"diamond blocks")
         print("")
 
-    def stick(x):
+    def stick(self,x):
         planks = 2*x
         planks = 0.25*planks
         print("You need",planks,"wooden planks") 
         print("For",x,"sticks")
         print("")
 
-    def redstone_torch(x):
+    def redstone_torch(self,x):
         stick = x
         redstone = x
         print("You need",stick,"sticks, and",redstone,"redstone") 
         print("For",x,"redstone torches")
         print("")
 
-    def redstone_repeater(x):
+    def redstone_repeater(self,x):
         stone = 3*x
         solar.redstone_torch(2*x)
         redstone = x
@@ -76,21 +76,21 @@ class solar():
         print("For",x,"redstone repeaters")
         print("")
     
-    def clock(x):
+    def clock(self,x):
         gold = 4*x
         redstone = 1*x
         print("You need",gold,"gold ingots, and",redstone,"redstone")
         print("For",x,"clocks")
         print("")
 
-    def redstone_lamp(x):
+    def redstone_lamp(self,x):
         redstone = 4*x
         solar.glowstone_block(x)
         print("You need",redstone,"redstone")
         print("For",x,"redstone lamps")
         print("")
 
-    def pho_I(x):
+    def pho_I(self,x):
         glass = 3*x
         lapis = 3*x
         solar.mirror(3*x)
@@ -98,7 +98,7 @@ class solar():
         print("For",x,"photovoltaic cell I's")
         print("")
 
-    def pho_II(x):
+    def pho_II(self,x):
         solar.pho_I(x)
         solar.mirror(2*x)
         lapis = 3*x
@@ -107,7 +107,7 @@ class solar():
         print("For",x,"photovoltaic cell II's")
         print("")
 
-    def pho_III(x):
+    def pho_III(self,x):
         glass = 3*x
         glowstone = 3*x
         obsididan = 2*x
@@ -116,7 +116,7 @@ class solar():
         print("For",x,"photovoltaic cell III's")
         print("")
 
-    def pho_IV(x):
+    def pho_IV(self,x):
         blaze_rod = 3*x
         glowstone = 2*x
         solar.diamond_block(x)
@@ -126,7 +126,7 @@ class solar():
         print("For",x,"phtovoltaic cell IV's")
         print("")
 
-    def solar_I(x):
+    def solar_I(self,x):
         planks = 5*x
         redstone = x
         solar.mirror(3*x)
@@ -134,13 +134,13 @@ class solar():
         print("For",x,"solar I's")
         print("")
 
-    def solar_II(x):
+    def solar_II(self,x):
         solar.solar_I(8*x)
         solar.piston(x)
         print("For",x,"solar II's")
         print("")
 
-    def solar_III(x):
+    def solar_III(self,x):
         solar.solar_II(4*x)
         solar.copper_block(x)
         solar.redstone_repeater(x)
@@ -148,7 +148,7 @@ class solar():
         print("For",x,"solar III's")
         print("")
     
-    def solar_IV(x):
+    def solar_IV(self,x):
         solar.solar_III(4*x)
         solar.iron_block(x)
         solar.clock(x)
@@ -156,7 +156,7 @@ class solar():
         print("For",x,"solar IV's")
         print("")
     
-    def solar_V(x):
+    def solar_V(self,x):
         solar.solar_IV(4*x)
         solar.pho_III(3*x)
         solar.gold_block(x)
@@ -164,7 +164,7 @@ class solar():
         print("For",x,"solar V's")
         print("")
     
-    def solar_VI(x):
+    def solar_VI(self,x):
         solar.solar_V(4*x)
         solar.redstone_lamp(x)
         solar.diamond_block(x)
