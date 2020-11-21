@@ -210,7 +210,7 @@ def machine():
         "thirteen":1351
         }
 
-    energy_input = 512
+    energy_input = 128
     num = []
     m_c_e_mach = 3
     e_f_mach = 1
