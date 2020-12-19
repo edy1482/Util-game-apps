@@ -159,5 +159,5 @@ def XServer(x):
     Cluster(5*x)
     Swarm(5*x)
 
-XServer(1)
+Sharing(1)
 Count()
