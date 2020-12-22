@@ -1,52 +1,63 @@
 class component():
 
-    def __init__(self, name, num=0):
+    def __init__(self, name, employee, num=0, time=0):
         self.name = name
+        self.employee = employee
         self.num = num
+        self.time = time
 
 components = {}
-components['Interface Mod'] = component('Interface Mod')
-components['Frontend Mod'] = component('Frontend Mod')
-components['Backend Mod'] = component('Backend Mod')
-components['Input Mod'] = component('Input Mod')
-components['Storage Mod'] = component('Storage Mod')
-components['Content Mod'] = component('Content Mod')
-components['Video Mod'] = component('Video Mod')
-components['Seo Mod'] = component('Seo Mod')
-components['Email Mod'] = component('Email Mod')
-components['Database Layer'] = component('Database Layer')
-components['Notification Mod'] = component('Notification Mod')
-components['Authentication Mod'] = component('Authentication Mod')
 
-components['UI Comp'] = component('UI Comp')
-components['Backend Comp'] = component('Backend Comp')
-components['Network Comp'] = component('Network Comp')
-components['Database Comp'] = component('Database Comp')
-components['Video Comp'] = component('Video Comp')
-components['Semantic Comp'] = component('Semantic Comp')
-components['Smtp Comp'] = component('Smtp Comp')
-components['Encryption Comp'] = component('Encryption Comp')
-components['Filesystem Comp'] = component('Filesystem Comp')
-components['l18n Comp'] = component('l18n Comp')
-components['Search Alg Comp'] = component('Search Alg Comp')
-components['Compression Comp'] = component('Compression Comp')
+components['UI Comp'] = component('UI Comp', time=0.3, employee='Developer')
+components['Backend Comp'] = component('Backend Comp', time=0.6, employee='Developer')
+components['Network Comp'] = component('Network Comp', time=0.9, employee='Developer')
+components['Database Comp'] = component('Database Comp', time=0.6, employee='Developer')
+components['Video Comp'] = component('Video Comp', time=2.0, employee='Developer')
+components['Semantic Comp'] = component('Semantic Comp', time=0.4, employee='Developer')
+components['Smtp Comp'] = component('Smtp Comp', time=1.2, employee='Developer')
+components['Encryption Comp'] = component('Encryption Comp', time=1.2, employee='Developer')
+components['Filesystem Comp'] = component('Filesystem Comp', time=0.6, employee='Developer')
+components['l18n Comp'] = component('l18n Comp', time=0.6, employee='Developer')
+components['Search Alg Comp'] = component('Search Alg Comp', time=1.8, employee='Developer')
+components['Compression Comp'] = component('Compression Comp', time=1.2, employee='Developer')
 
-components['Blueprint Comp'] = component('Blueprint Comp')
-components['Wireframe Comp'] = component('Wireframe Comp')
-components['Graphics Comp'] = component('Graphics Comp')
-components['UI El'] = component('UI El')
-components['UI Set'] = component('UI Set')
-components['Responsive UI'] = component('Responsive UI')
+components['Blueprint Comp'] = component('Blueprint Comp', time=0.3, employee='Designer')
+components['Wireframe Comp'] = component('Wireframe Comp', time=0.4, employee='Designer')
+components['Graphics Comp'] = component('Graphics Comp', time=0.6, employee='Designer')
+components['UI El'] = component('UI El', time=0.9, employee='Designer')
+components['UI Set'] = component('UI Set', time=2.7, employee='Designer')
+components['Responsive UI'] = component('Responsive UI', time=2.7, employee='Designer')
+components['Doc Comp'] = component('Doc Comp', time=1.8, employee='Designer')
+components['Design Guide'] = component('Design Guide', time=13.4, employee='Designer')
 
-components['Virtual Hardware'] = component('Virtual Hardware')
-components['Operating System'] = component('Operating System')
-components['Firewall'] = component('Firewall')
-components['Process Management'] = component('Process Management')
-components['Continuous Integration'] = component('Continuous Integration')
-components['Cron Job'] = component('Cron Job')
-components['Virtual Container'] = component('Virtual Container')
-components['Cluster'] = component('Cluster')
-components['Swarm Management'] = component('Swarm Management')
+components['Interface Mod'] = component('Interface Mod', time=2.3, employee='Lead Developer')
+components['Frontend Mod'] = component('Frontend Mod', time=4.4, employee='Lead Developer')
+components['Backend Mod'] = component('Backend Mod', time=2.1, employee='Lead Developer')
+components['Input Mod'] = component('Input Mod', time=0.9, employee='Lead Developer')
+components['Storage Mod'] = component('Storage Mod', time=1.2, employee='Lead Developer')
+components['Content Mod'] = component('Content Mod', time=5.7, employee='Lead Developer')
+components['Video Mod'] = component('Video Mod', time=7.0, employee='Lead Developer')
+components['Seo Mod'] = component('Seo Mod', time=3.7, employee='Lead Developer')
+components['Email Mod'] = component('Email Mod', time=1.9, employee='Lead Developer')
+components['Database Layer'] = component('Database Layer', time=2.2, employee='Lead Developer')
+components['Notification Mod'] = component('Notification Mod', time=2.8, employee='Lead Developer')
+components['Authentication Mod'] = component('Authentication Mod', time=3.4, employee='Lead Developer')
+components['Pay Gate Mod'] = component('Pay Gate Mod', time=11.8, employee='Lead Developer')
+components['Local Mod'] = component('Local Mod', time=3.9, employee='Lead Developer')
+components['Search Mod'] = component('Search Mod', time=3.1, employee='Lead Developer')
+components['Band Comp Mod'] = component('Band Comp Mod', time=2.8, employee='Lead Developer')
+components['API Client Mod'] = component('API Client Mod', time=6.2, employee='Lead Developer')
+components['Code Opt Mod'] = component('Code Opt Mod', time=13.9, employee='Lead Developer')
+
+components['Virtual Hardware'] = component('Virtual Hardware', time=0.8, employee='SYS Admin')
+components['Operating System'] = component('Operating System', time=0.8, employee='SYS Admin')
+components['Firewall'] = component('Firewall', time=0.8, employee='SYS Admin')
+components['Process Management'] = component('Process Management', time=1.2, employee='SYS Admin')
+components['Continuous Integration'] = component('Continuous Integration', time=1.6, employee='SYS Admin')
+components['Cron Job'] = component('Cron Job', time=0.6, employee='SYS Admin')
+components['Virtual Container'] = component('Virtual Container', time=4.9, employee='SYS Admin')
+components['Cluster'] = component('Cluster', time=22.4, employee='SYS Admin')
+components['Swarm Management'] = component('Swarm Management', time=27.3, employee='SYS Admin')
 
 def Frontend_Mod(x):
     components['Frontend Mod'].num += x
@@ -106,12 +117,11 @@ def UI_El(x):
     components['Blueprint Comp'].num += x
     components['Graphics Comp'].num += x
 
-def Count():
-    for i in components:
-        if components[i].num == 0:
-            pass
-        else:
-            print(components[i].name,":",components[i].num)
+def Landing_Page(x):
+    components['UI Comp'].num += x
+    components['Backend Comp'].num += x
+    components['Blueprint Comp'].num += x
+    components['Graphics Comp'].num += x
 
 def Video(x):
     Frontend_Mod(x)
@@ -159,5 +169,55 @@ def XServer(x):
     Cluster(5*x)
     Swarm(5*x)
 
-Video(1)
+def Count():
+    for i in components:
+        if components[i].num == 0:
+            pass
+        else:
+            print(components[i].name, ":", components[i].num, ":", components[i].employee)
+
+def Prod():
+    prod_times = {
+        "dev" : 0,
+        "designer": 0,
+        "lead dev": 0,
+        "SYS Ad": 0
+    }
+    employee_num = {
+        "dev" : 0,
+        "designer": 0,
+        "lead dev": 0,
+        "SYS Ad": 0
+    }
+    day_time = 7.0
+    for i in components:
+        if components[i].num == 0:
+            pass
+        else:
+            pass
+            if components[i].employee == 'Developer':
+                prod_times['dev'] += components[i].num*components[i].time
+            if components[i].employee == 'Designer':
+                prod_times["designer"] += components[i].num*components[i].time
+            if components[i].employee == 'Lead Developer':
+                prod_times["lead dev"] += components[i].num*components[i].time
+            if components[i].employee == 'SYS Admin':
+                prod_times["SYS Ad"] += components[i].num*components[i].time
+    for i in prod_times and employee_num:
+        if prod_times[i] == 0:
+            pass
+        else:
+            employee_num[i] += 1
+            if prod_times[i] > day_time:
+                employ_diff = prod_times[i]/day_time
+                employee_num[i] += round(employ_diff)
+            if prod_times[i] < day_time:
+                pass
+    print(employee_num)
+               
+Landing_Page(10)
+Video(10)
+Item_List(10)
+Sharing(10)
 Count()
+Prod()
