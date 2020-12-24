@@ -215,9 +215,9 @@ def Prod():
                 pass
     print(employee_num)
                
-Landing_Page(10)
-Video(10)
-Item_List(10)
-Sharing(10)
+Landing_Page(50)
+Video(50)
+Item_List(50)
+Sharing(50)
 Count()
 Prod()
