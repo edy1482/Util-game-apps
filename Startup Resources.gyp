@@ -213,9 +213,11 @@ def Prod():
                 employee_num[i] += round(employ_diff)
             if prod_times[i] < day_time:
                 pass
-    print(employee_num)
+    total = 0
+    for i in employee_num:
+        total += employee_num[i]
+    print(employee_num, 'total:', total)
                
-Video(100)
-Landing_Page(100)
+Item_List(5)
 Count()
-#Prod()
+Prod()
