@@ -218,6 +218,6 @@ def Prod():
         total += employee_num[i]
     print(employee_num, 'total:', total)
                
-Item_List(5)
+Sharing(5)
 Count()
 Prod()
