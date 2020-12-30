@@ -107,6 +107,18 @@ def Database_Layer(x):
     components['Backend Comp'].num += x
     components['Network Comp'].num += x
 
+def Code_Opt_Mod(x):
+    components['Code Opt Mod'].num += x
+    Backend_Mod(2*x)
+    Frontend_Mod(2*x)
+    Database_Layer(2*x)
+
+def API_Client_Mod(x):
+    components['API Client Mod'].num += x
+    Backend_Mod(x)
+    Database_Layer(x)
+    components['Compression Comp'].num += 2*x
+
 def UI_Set(x):
     components['UI Set'].num += x
     components['Wireframe Comp'].num += 2*x
@@ -169,6 +181,12 @@ def XServer(x):
     Cluster(5*x)
     Swarm(5*x)
 
+def DDOS(x):
+    Code_Opt_Mod(x)
+    API_Client_Mod(2*x)
+    Swarm(x)
+    components['Firewall'].num += 5*x
+
 def Count():
     for i in components:
         if components[i].num == 0:
@@ -218,6 +236,6 @@ def Prod():
         total += employee_num[i]
     print(employee_num, 'total:', total)
                
-Sharing(5)
+DDOS(5)
 Count()
 Prod()
