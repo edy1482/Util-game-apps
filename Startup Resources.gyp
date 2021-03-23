@@ -158,6 +158,11 @@ def Offline(x):
     Database_Layer(2*x)
     UI_Set(x)
 
+def Live_Streaming(x):
+    Backend_Mod(x)
+    Frontend_Mod(x)
+    components['Network Comp'].num += (4*x)
+
 def Virtual_Container(x):
     components['Virtual Container'].num += x
     components['Virtual Hardware'].num += x
@@ -236,6 +241,6 @@ def Prod():
         total += employee_num[i]
     print(employee_num, 'total:', total)
                
-DDOS(5)
+Video(1)
 Count()
 Prod()
