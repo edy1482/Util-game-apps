@@ -217,7 +217,6 @@ def Prod():
         if components[i].num == 0:
             pass
         else:
-            pass
             if components[i].employee == 'Developer':
                 prod_times['dev'] += components[i].num*components[i].time
             if components[i].employee == 'Designer':
@@ -241,6 +240,6 @@ def Prod():
         total += employee_num[i]
     print(employee_num, 'total:', total)
                
-Video(5)
+DDOS(1)
 Count()
 Prod()
