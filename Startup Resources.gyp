@@ -219,11 +219,11 @@ def Prod():
         else:
             if components[i].employee == 'Developer':
                 prod_times['dev'] += components[i].num*components[i].time
-            if components[i].employee == 'Designer':
+            elif components[i].employee == 'Designer':
                 prod_times["designer"] += components[i].num*components[i].time
-            if components[i].employee == 'Lead Developer':
+            elif components[i].employee == 'Lead Developer':
                 prod_times["lead dev"] += components[i].num*components[i].time
-            if components[i].employee == 'SYS Admin':
+            elif components[i].employee == 'SYS Admin':
                 prod_times["SYS Ad"] += components[i].num*components[i].time
     for i in prod_times and employee_num:
         if prod_times[i] == 0:
@@ -233,7 +233,7 @@ def Prod():
             if prod_times[i] > day_time:
                 employ_diff = prod_times[i]/day_time
                 employee_num[i] += round(employ_diff)
-            if prod_times[i] < day_time:
+            elif prod_times[i] < day_time:
                 pass
     total = 0
     for i in employee_num:
