@@ -240,6 +240,7 @@ def Prod():
         total += employee_num[i]
     print(employee_num, 'total:', total)
                
-Video(5)
+Video(2)
+#Landing_Page(10)
 Count()
 Prod()
