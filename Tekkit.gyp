@@ -4,177 +4,177 @@ class item():
         self.name = name
         self.num = num
 
-def mirror(x):
-    glass = 3*x
-    sn_fe_al = x
+def mirror(num):
+    glass = 3*num
+    sn_fe_al = num
     glass = 0.5*glass
     sn_fe_al = 0.5*sn_fe_al
     print(f"You need {glass} glass and,{sn_fe_al} tin/iron/aluminium ingots") 
-    print(f"For {x} mirrors")
+    print(f"For {num} mirrors")
     print("\n")
     return
 
-def piston(x):
-    cobble = 4*x
-    planks = 3*x
-    iron = x
-    redstone = x
+def piston(num):
+    cobble = 4*num
+    planks = 3*num
+    iron = num
+    redstone = num
     print(f"You need {cobble} cobble, {planks} wooden planks, {iron} iron ingots, and {redstone} redstone") 
-    print(f"For {x} pistons")
+    print(f"For {num} pistons")
     print("\n")
 
-def quartz_block(x):
-    nether_quartz = 4*x
+def quartz_block(num):
+    nether_quartz = 4*num
     print(f"You need {nether_quartz} nether quartz")
-    print(f"For {x} quartz blocks")
+    print(f"For {num} quartz blocks")
     print("\n")
 
-def copper_block(x):
-    copper = 9*x
+def copper_block(num):
+    copper = 9*num
     print(f"You need {copper} copper ingots") 
-    print(f"For {x} copper blocks")
+    print(f"For {num} copper blocks")
     print("\n")
 
-def glowstone_block(x):
-    glowstone = 4*x
+def glowstone_block(num):
+    glowstone = 4*num
     print(f"You need {glowstone} glowstone")
-    print(f"For {x} glowstone blocks")
+    print(f"For {num} glowstone blocks")
     print("\n")
 
-def iron_block(x):
-    iron = 9*x
+def iron_block(num):
+    iron = 9*num
     print(f"You need {iron} ingots")
-    print(f"For {x} iron blocks")
+    print(f"For {num} iron blocks")
     print("\n")
 
-def gold_block(x):
-    gold = 9*x
+def gold_block(num):
+    gold = 9*num
     print(f"You need {gold} gold ingots")
-    print(f"For {x} gold blocks")
+    print(f"For {num} gold blocks")
     print("\n")
 
-def diamond_block(x):
-    diamond = 9*x
+def diamond_block(num):
+    diamond = 9*num
     print(f"You need {diamond} diamonds")
-    print(f"For {x} diamond blocks")
+    print(f"For {num} diamond blocks")
     print("\n")
 
-def stick(x):
-    planks = 2*x
+def stick(num):
+    planks = 2*num
     planks = 0.25*planks
     print(f"You need {planks} wooden planks") 
-    print(f"For {x} sticks")
+    print(f"For {num} sticks")
     print("\n")
 
-def redstone_torch(x):
-    stick = x
-    redstone = x
+def redstone_torch(num):
+    stick = num
+    redstone = num
     print(f"You need {stick} sticks, and {redstone} redstone") 
-    print(f"For {x} redstone torches")
+    print(f"For {num} redstone torches")
     print("\n")
 
-def redstone_repeater(x):
-    stone = 3*x
-    redstone_torch(2*x)
-    redstone = x
+def redstone_repeater(num):
+    stone = 3*num
+    redstone_torch(2*num)
+    redstone = num
     print(f"You need {stone} stone, and {redstone} redstone")
-    print(f"For {x} redstone repeaters")
+    print(f"For {num} redstone repeaters")
     print("\n")
 
-def clock(x):
-    gold = 4*x
-    redstone = 1*x
+def clock(num):
+    gold = 4*num
+    redstone = 1*num
     print(f"You need {gold} gold ingots, and {redstone} redstone")
-    print(f"For {x} clocks")
+    print(f"For {num} clocks")
     print("\n")
 
-def redstone_lamp(x):
-    redstone = 4*x
-    glowstone_block(x)
+def redstone_lamp(num):
+    redstone = 4*num
+    glowstone_block(num)
     print(f"You need {redstone} redstone")
-    print(f"For {x} redstone lamps")
+    print(f"For {num} redstone lamps")
     print("\n")
 
-def pho_I(x):
-    glass = 3*x
-    lapis = 3*x
-    mirror(3*x)
+def pho_I(num):
+    glass = 3*num
+    lapis = 3*num
+    mirror(3*num)
     print(f"You need {glass} glass, and {lapis} lapis lazuli") 
-    print(f"For {x} photovoltaic cell I's")
+    print(f"For {num} photovoltaic cell I's")
     print("\n")
 
-def pho_II(x):
-    pho_I(x)
-    mirror(2*x)
-    lapis = 3*x
-    clay = 3*x
+def pho_II(num):
+    pho_I(num)
+    mirror(2*num)
+    lapis = 3*num
+    clay = 3*num
     print(f"You need {lapis} lapis lazuli, and {clay}clay")
-    print(f"For {x} photovoltaic cell II's")
+    print(f"For {num} photovoltaic cell II's")
     print("\n")
 
-def pho_III(x):
-    glass = 3*x
-    glowstone = 3*x
-    obsididan = 2*x
-    pho_II(x)
+def pho_III(num):
+    glass = 3*num
+    glowstone = 3*num
+    obsididan = 2*num
+    pho_II(num)
     print(f"You need {glass} glass, {glowstone} glowstone dust, and {obsididan} obisdian")
-    print(f"For {x} photovoltaic cell III's")
+    print(f"For {num} photovoltaic cell III's")
     print("\n")
 
-def pho_IV(x):
-    blaze_rod = 3*x
-    glowstone = 2*x
-    diamond_block(x)
-    pho_III(x)
-    quartz_block(2*x)
+def pho_IV(num):
+    blaze_rod = 3*num
+    glowstone = 2*num
+    diamond_block(num)
+    pho_III(num)
+    quartz_block(2*num)
     print(f"You need {blaze_rod} blaze rods, and {glowstone} glowstone")
-    print(f"For {x} photovoltaic cell IV's")
+    print(f"For {num} photovoltaic cell IV's")
     print("\n")
 
-def solar_I(x):
-    planks = 5*x
-    redstone = x
-    mirror(3*x)
+def solar_I(num):
+    planks = 5*num
+    redstone = num
+    mirror(3*num)
     print(f"You need {planks} wooden planks and {redstone} redstone") 
-    print(f"For {x} solar I's")
+    print(f"For {num} solar I's")
     print("\n")
 
-def solar_II(x):
-    solar_I(8*x)
-    piston(x)
-    print(f"For {x} solar II's")
+def solar_II(num):
+    solar_I(8*num)
+    piston(num)
+    print(f"For {num} solar II's")
     print("\n")
 
-def solar_III(x):
-    solar_II(4*x)
-    copper_block(x)
-    redstone_repeater(x)
-    pho_I(3*x)
-    print(f"For {x} solar III's")
+def solar_III(num):
+    solar_II(4*num)
+    copper_block(num)
+    redstone_repeater(num)
+    pho_I(3*num)
+    print(f"For {num} solar III's")
     print("\n")
 
-def solar_IV(x):
-    solar_III(4*x)
-    iron_block(x)
-    clock(x)
-    pho_II(3*x)
-    print(f"For {x} solar IV's")
+def solar_IV(num):
+    solar_III(4*num)
+    iron_block(num)
+    clock(num)
+    pho_II(3*num)
+    print(f"For {num} solar IV's")
     print("\n")
 
-def solar_V(x):
-    solar_IV(4*x)
-    pho_III(3*x)
-    gold_block(x)
-    redstone_lamp(x)
-    print(f"For {x} solar V's")
+def solar_V(num):
+    solar_IV(4*num)
+    pho_III(3*num)
+    gold_block(num)
+    redstone_lamp(num)
+    print(f"For {num} solar V's")
     print("\n")
     
-def solar_VI(x):
-    solar_V(4*x)
-    redstone_lamp(x)
-    diamond_block(x)
-    pho_IV(3*x)
-    print(f"For {x} solar VI's")
+def solar_VI(num):
+    solar_V(4*num)
+    redstone_lamp(num)
+    diamond_block(num)
+    pho_IV(3*num)
+    print(f"For {num} solar VI's")
     print("\n")
 
 def machine(energy_input):
