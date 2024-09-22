@@ -177,7 +177,7 @@ def solar_VI(num):
     print(f"For {num} solar VI's")
     print("\n")
 
-def machine(energy):
+def machine(energy, m_c_e_mach, e_f_mach):
 
     m_c_e = {
         "zero":2,
@@ -216,8 +216,6 @@ def machine(energy):
         }
 
     num = []
-    m_c_e_mach = 3
-    e_f_mach = 1
 
     for i in m_c_e and e_f:
         x = m_c_e[i]
@@ -249,5 +247,9 @@ if __name__ == "__main__":
                 print(f"{energy_input} is not a recognised level or command, please try again: ")
             else:
                 break
+        m_c_e_mach_input = input("What is the number of macerators and compressors and extractors: ")
+        m_c_e_mach_input = int(m_c_e_mach_input)
+        e_f_mach_input = input("What is the number of electric furnaces: ")
+        e_f_mach_input = int(e_f_mach_input)
         voltage = voltages[energy_input]
-        machine(energy=voltage)
+        machine(energy=voltage, m_c_e_mach=m_c_e_mach_input, e_f_mach=e_f_mach_input)
