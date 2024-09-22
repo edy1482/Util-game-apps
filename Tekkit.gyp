@@ -115,9 +115,9 @@ def pho_II(num):
 def pho_III(num):
     glass = 3*num
     glowstone = 3*num
-    obsididan = 2*num
+    obsidian = 2*num
     pho_II(num)
-    print(f"You need {glass} glass, {glowstone} glowstone dust, and {obsididan} obisdian")
+    print(f"You need {glass} glass, {glowstone} glowstone dust, and {obsidian} obsidian")
     print(f"For {num} photovoltaic cell III's")
     print("\n")
 
@@ -177,7 +177,7 @@ def solar_VI(num):
     print(f"For {num} solar VI's")
     print("\n")
 
-def machine(energy_input):
+def machine(energy):
 
     m_c_e = {
         "zero":2,
@@ -223,8 +223,8 @@ def machine(energy_input):
         x = m_c_e[i]
         y = e_f[i]
         w = (m_c_e_mach*x)+(e_f_mach*y)
-        if w <= energy_input:
-            z = energy_input - w
+        if w <= energy:
+            z = energy - w
             num.append("o")
         else:
             print(f"{z} power left")
@@ -232,4 +232,22 @@ def machine(energy_input):
     print(f"{len(num)-1} overclockers each")
 
 if __name__ == "__main__":
-    machine(energy_input=128)
+    voltages = {
+        "LV" : 32,
+        "MV" : 128,
+        "HV" : 512,
+        "EV" : 2048
+    }
+    loop = True
+    
+    while loop:
+        while True:  
+            energy_input = input("Choose from following energy levels, LV, MV, HV, EV :")
+            if energy_input == "exit":
+                exit()
+            elif energy_input not in voltages.keys():
+                print(f"{energy_input} is not a recognised level or command, please try again: ")
+            else:
+                break
+        voltage = voltages[energy_input]
+        machine(energy=voltage)
