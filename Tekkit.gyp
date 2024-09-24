@@ -1,3 +1,5 @@
+import argparse
+
 class item():
 
     def __init__(self, name, num=0):
@@ -227,10 +229,10 @@ def machine(energy, m_c_e_mach, e_f_mach):
         else:
             print(f"{z} power left")
             break   
-    print(f"{len(num)-1} overclockers each")
+    print(f"{len(num)-1} overclockers per machine")
     return
 
-def main():
+def user_input():
     voltages = {
         "LV" : 32,
         "MV" : 128,
@@ -238,7 +240,6 @@ def main():
         "EV" : 2048
     }
     loop = True
-    
     while loop:  
         energy_input = input("Choose from following energy levels, LV, MV, HV, EV :")
         if energy_input == "exit":
@@ -246,21 +247,42 @@ def main():
         elif energy_input not in voltages.keys():
             print(f"{energy_input} is not a recognised level or command, please try again: ")
             continue
-        m_c_e_mach_input = input("What is the number of macerators and compressors and extractors: ")
+        m_c_e_num_input = input("What is the number of macerators and compressors and extractors: ")
         try:
-            m_c_e_mach_input = int(m_c_e_mach_input)
+            m_c_e_num_input = int(m_c_e_num_input)
         except ValueError:
             print(f"This is not an accepted value - try an integer")
             continue
-        e_f_mach_input = input("What is the number of electric furnaces: ")
+        e_f_num_input = input("What is the number of electric furnaces: ")
         try:
-            e_f_mach_input = int(e_f_mach_input)
+            e_f_num_input = int(e_f_num_input)
         except ValueError:
             print(f"This is not an accepted value - try an integer")
             continue
         voltage = voltages[energy_input]
-        machine(energy=voltage, m_c_e_mach=m_c_e_mach_input, e_f_mach=e_f_mach_input)
-        return
+        machine(energy=voltage, m_c_e_mach=m_c_e_num_input, e_f_mach=e_f_num_input)
+
+def main(voltage=None, m_c_e_num_input=None, e_f_num_input=None):
+    if voltage is None or m_c_e_num_input is None or e_f_num_input is None:
+        user_input()
+    else:
+        voltages = {
+        "LV" : 32,
+        "MV" : 128,
+        "HV" : 512,
+        "EV" : 2048
+        }
+        ecu = voltages[voltage]
+        machine(energy=ecu, m_c_e_mach=m_c_e_num_input, e_f_mach=e_f_num_input)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Script to help with energy calculations with Tekkit ic2 machines", prog="PROG", 
+                                     epilog="If any of the arguments are left empty, then the script runs on user_input mode")
+    parser.add_argument("-e_level", required=False, type=str, choices=["LV", "MV", "HV", "EV"], help="The energy level which is either LV, MV, HV or EV")
+    parser.add_argument("-mce_sum", required=False, type=int, help="The sum of macerators, compressors, and extractors in your system")
+    parser.add_argument("-efurn_sum", required=False, type=int, help="The sum of electric furnaces in your system")
+    args = parser.parse_args()
+    voltage = args.e_level
+    m_c_e_num_input = args.mce_sum
+    e_f_num_input = args.efurn_sum
+    main(voltage=voltage, m_c_e_num_input=m_c_e_num_input, e_f_num_input=e_f_num_input)
