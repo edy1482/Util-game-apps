@@ -228,8 +228,9 @@ def machine(energy, m_c_e_mach, e_f_mach):
             print(f"{z} power left")
             break   
     print(f"{len(num)-1} overclockers each")
+    return
 
-if __name__ == "__main__":
+def main():
     voltages = {
         "LV" : 32,
         "MV" : 128,
@@ -238,18 +239,28 @@ if __name__ == "__main__":
     }
     loop = True
     
-    while loop:
-        while True:  
-            energy_input = input("Choose from following energy levels, LV, MV, HV, EV :")
-            if energy_input == "exit":
-                exit()
-            elif energy_input not in voltages.keys():
-                print(f"{energy_input} is not a recognised level or command, please try again: ")
-            else:
-                break
+    while loop:  
+        energy_input = input("Choose from following energy levels, LV, MV, HV, EV :")
+        if energy_input == "exit":
+            exit()
+        elif energy_input not in voltages.keys():
+            print(f"{energy_input} is not a recognised level or command, please try again: ")
+            continue
         m_c_e_mach_input = input("What is the number of macerators and compressors and extractors: ")
-        m_c_e_mach_input = int(m_c_e_mach_input)
+        try:
+            m_c_e_mach_input = int(m_c_e_mach_input)
+        except ValueError:
+            print(f"This is not an accepted value - try an integer")
+            continue
         e_f_mach_input = input("What is the number of electric furnaces: ")
-        e_f_mach_input = int(e_f_mach_input)
+        try:
+            e_f_mach_input = int(e_f_mach_input)
+        except ValueError:
+            print(f"This is not an accepted value - try an integer")
+            continue
         voltage = voltages[energy_input]
         machine(energy=voltage, m_c_e_mach=m_c_e_mach_input, e_f_mach=e_f_mach_input)
+        return
+
+if __name__ == "__main__":
+    main()
