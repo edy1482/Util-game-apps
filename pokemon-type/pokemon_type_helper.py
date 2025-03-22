@@ -1,5 +1,4 @@
 import pandas as pd
-import argparse
 
 # This script takes in the pokemon types in your party and outputs two things:
 # 1. The type advantages that your party has, e.g. if you have a water pokemon then you have a type advantage against fire
@@ -15,37 +14,32 @@ all_types.remove("Attacking")
 
 # This returns a dictionary of the type matchups for a particular attacker type
 def types_match_ups(type: str):
-    # index = df.index.get_loc(type)
-    # output = df.iloc[index]
     matchups = df[df["Attacking"] == type].to_dict()
     matchups.pop("Attacking")
     for key,val in matchups.items():
         matchups[key] = list(val.values())[0] # There is only one item, as there is only one row
     return matchups
 
-# This returns a type advantage or disadvantage based on the bool
-def type_ad_vantage(type: str, advantage: bool):
+# This returns a list of type advantages or disadvantages based on the bool
+def type_advantage(type: str, advantage: bool) -> list:
     d = types_match_ups(type)
     output = []
     for key, val in d.items():
-        if advantage and val == 2:
+        if advantage and val > 1:
+            output.append(key)
+        elif not advantage and val < 1:
             output.append(key)
     return output
 
-def type_advantage_set(ltypes):
+def type_advantage_set(l_types: list) -> set:
     output = []
-    for type in ltypes: 
-        output += type_ad_vantage(type)
+    for type in l_types: 
+        output += type_advantage(type, True)
     return set(output)
 
-def missing_types(type_set):
-    return all_types - type_set
-
+# Testing
 def main():
-    test = ["Grass", "Dark", "Psychic", "Fairy", "Fighting", "Ghost", "Flying", "Fire", "Ground", "Dragon", "Flying", "Electric"]
-    test_set = type_advantage_set(test)
-    print(test_set)
-    print(missing_types(test_set))
+    pass
 
 if __name__ == "__main__":
     main()
